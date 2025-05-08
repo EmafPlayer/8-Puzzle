@@ -40,6 +40,7 @@ export function Puzzle () {
             clearInterval(intervaloRef.current);
         }
 
+        setBotaoEnviar(false)
         setBotaoAleatorio(true)
         setBotaoSolucionar(false)
         setBotaoCriar(false)
@@ -54,6 +55,7 @@ export function Puzzle () {
             clearInterval(intervaloRef.current);
         }
 
+        setBotaoEnviar(false)
         setBotaoAleatorio(false)
         setBotaoSolucionar(false)
         setBotaoCriar(true)
@@ -249,7 +251,7 @@ export function Puzzle () {
                 </div>
 
                 <ul className="flex gap-x-8">
-                    <li><Botao onClick={() => {resolverPuzzle()}} className={twMerge("bg-yellow-400 text-black", (!botao_enviar && botao_criar) && "pointer-events-none bg-opacity-40")}>Solucionar</Botao></li>
+                    <li><Botao onClick={() => {resolverPuzzle()}} className={twMerge("bg-yellow-400 text-black", (!botao_enviar && botao_criar) && "pointer-events-none opacity-30")}>Solucionar</Botao></li>
                     <li><Botao onClick={() => {embaralhar(); botaoEmbaralhar()}} className="bg-purple-900 text-white">Aleatório</Botao></li>
                     <li><Botao onClick={() => {criarPuzzle(); botaoCriar()}} className={twMerge("bg-red-800 text-white")}>Criar Manualmente</Botao></li>
                     {botao_criar && <li><Botao onClick={() => {enviarGerado()}} className="bg-green-700 text-white">Enviar</Botao></li>}
